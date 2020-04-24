@@ -44,7 +44,7 @@ function Pizza(props) {
             <option value='medium'>Medium</option>
             <option value='large'>Large</option>
         </select></label>
-      
+        Toppings: 
         <label><input
           checked={values.toppings.cheese}
           onChange={onCheckboxChange}

@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { Route, Switch, Link } from 'react-router-dom'
+import { Route, Switch, Link } from 'react-router-dom';
+import { Styles } from './components/Styles'
+import './App.css'
 
 import axios from 'axios'
 import * as yup from 'yup'
@@ -30,7 +32,7 @@ const initialFormErrors = {
 const formSchema = yup.object().shape({
   name: yup
     .string()
-    .min(3, 'Need at least 3 characters')
+    .min(2, 'Need at least 2 characters')
     .required('Name is required'),
   size: yup
     .string()
@@ -50,7 +52,6 @@ const App = () => {
   const getUser = () => {
     axios.get(url)
       .then(res => {
-        console.log(res.data.data)
         setUsers(res.data.data)
       })
       .catch(err => {
@@ -128,13 +129,13 @@ const App = () => {
   }
 
   return (
-    <>
-      <header>
+    <div className='App'>
+      <header className='header-h1'>
         <h1>Lambda Eats</h1>
 
-        <div>
-          <Link to='/'>Home </Link> 
-          <Link to='/pizza'> Pizza</Link>
+        <div className='nav-links'>
+          <Link to='/'>Home</Link>
+          <Link to='/pizza'>Place Order</Link>
         </div>
       </header>
       
@@ -178,7 +179,7 @@ const App = () => {
         })
       }
 
-    </>
+    </div>
   );
 };
 export default App;
