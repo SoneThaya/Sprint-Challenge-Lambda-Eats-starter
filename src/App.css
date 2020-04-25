@@ -28,6 +28,17 @@
   color: #61dafb;
 }
 
+.header-h1 h1 {
+  font-size: 48px;
+  margin: 0;
+  padding: 20px
+}
+
+.nav-links a {
+  padding: 5px;
+  font-size: 36px;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
